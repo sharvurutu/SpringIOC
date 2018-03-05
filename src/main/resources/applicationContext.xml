@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="name" class="java.lang.String">
+		<constructor-arg value="Harish Manana" />
+	</bean>
+
+	<bean id="city" class="java.lang.String">
+		<constructor-arg value="Bengaluru" />
+	</bean>
+
+	<bean id="userInfo" class="com.spring.model.UserInfo">
+		<constructor-arg name="name" value="Harish Manana" />
+		<constructor-arg name="city" ref="city" />
+	</bean>
+
+	<bean id="userDetails" class="com.spring.model.UserInfo" scope="singleton">
+		<property name="name" value="Harish Manana" />
+		<property name="city" value="New Delhi" />
+	</bean>
+</beans>
